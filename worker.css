@@ -1,6 +1,6 @@
 .bgimg
 {
-    background-image: url("/bg.jpg");
+    background-image: url("bg.jpg");
     background-position: 0% 0%;
     height:100%;
     width:100%;
