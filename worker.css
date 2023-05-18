@@ -1,0 +1,19 @@
+.bgimg
+{
+    background-image: url("/bg.jpg");
+    background-position: 0% 0%;
+    height:100%;
+    width:100%;
+    background-size: cover;
+    /* filter: blur(3px); */
+}
+body{
+    height: 100%;
+    Width:100%;
+}
+.footer
+{
+    position:relative;
+    bottom: 10px;
+    
+}

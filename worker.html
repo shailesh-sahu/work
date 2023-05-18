@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>WorkEaze</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="/worker.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+        
+        <script>
+          function setStatus(action, row) {
+            const statusCell = document.querySelector(`.status:nth-child(${row})`);
+            const approveButton = document.querySelector(`button[onclick="setStatus('approve', ${row})"]`);
+            const declineButton = document.querySelector(`button[onclick="setStatus('decline', ${row})"]`);
+        
+            if (action === 'approve') {
+              statusCell.textContent = 'approved';
+            } else if (action === 'decline') {
+              statusCell.textContent = 'declined';
+            } else {
+              statusCell.textContent = 'pending';
+            }
+        
+            // Reset button styles
+            approveButton.style.backgroundColor = 'Green';
+            declineButton.style.backgroundColor = 'Red';
+        
+            // Highlight the clicked button
+            if (action === 'approve') {
+              approveButton.style.backgroundColor = 'green';
+            } else if (action === 'decline') {
+              declineButton.style.backgroundColor = 'red';
+            }
+          }
+        </script>
+
+    </head>
+
+<!-- -------------------header--------------------------------- -->
+
+    <header class="text-white body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <button></button>
+             <a class="flex title-font font-medium items-center text-yellow-300 mb-4 md:mb-0 ">
+           
+            <span class="ml-3 text-6xl text-white text-center">Work<span class="eaze" style=" color:#ebf30d;">Eaze</span></span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-yellow-300" href="home2.html">Home</a>
+            <a class="mr-5 hover:text-yellow-300" href="login.html">Login</a>
+            <a class="mr-5 hover:text-yellow-300">Contact us</a>
+            <a class="mr-5 hover:text-yellow-300">Founders</a>
+          </nav>
+          <!-- <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+            <i class="fas fa-bars"></i>
+          </button> -->
+        </div>
+      </header>
+
+
+              <!-- -------------------body--------------------------------- -->
+
+    <body class="bgimg">
+      
+      <div class="flex flex-col">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+              <table class="w-3/4 ml-auto mr-auto mt-10px items-center justify-center text-left text-sm font-serif">
+                <thead class="border-b bg-white font-medium dark:border-neutral-500 white:bg-neutral-600">
+                  <tr>
+                    <th colspan="5" scope="col" class="px-6 py-4 text-center text-4xl bg-yellow-300">Work Request</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b bg-neutral-100 dark:border-neutral-500 white:bg-neutral-700 font-semibold ">
+                    <td class="whitespace-nowrap px-6 py-4 font-semibold">S.no.</td>
+                    <td class="whitespace-nowrap px-6 py-4">Name of user</td>
+                    <td class="whitespace-nowrap px-6 py-4">Distance</td>
+                    <td class="whitespace-nowrap px-6 py-4">Status</td>
+                    <td class="whitespace-nowrap px-6 py-4">Action</td>
+                  </tr>
+                  <tr class="border-b bg-white dark:border-neutral-500 white:bg-neutral-600">
+                    <td class="whitespace-nowrap px-6 py-4 font-medium">1</td>
+                    <td class="whitespace-nowrap px-6 py-4">Shailesh Kumar</td>
+                    <td class="whitespace-nowrap px-6 py-4">0.5</td>
+                    <td class="whitespace-nowrap px-6 py-4 status">pending</td>
+                    <td class="whitespace-nowrap px-6 py-4">
+                      <button onclick="setStatus('approve', 1)">Approve</button>
+                      <button onclick="setStatus('decline', 0)">Decline</button>
+                    </td>
+                  </tr>
+                  <tr class="border-b bg-neutral-100 dark:border-neutral-500 white:bg-neutral-700">
+                    <td class="whitespace-nowrap px-6 py-4 font-medium">2</td>
+                    <td class="whitespace-nowrap px-6 py-4">Bixo</td>
+                    <td class="whitespace-nowrap px-6 py-4">1.5</td>
+                    <td class="whitespace-nowrap px-6 py-4 status">pending</td>
+                    <td class="whitespace-nowrap px-6 py-4">
+                      <button onclick="setStatus('approve', 1)">Approve</button>
+                      <button onclick="setStatus('decline', 0)">Decline</button>
+                    </td>
+                  </tr>
+                  <tr class="border-b bg-neutral-100 dark:border-neutral-500 white:bg-neutral-700">
+                    <td class="whitespace-nowrap px-6 py-4 font-medium">3</td>
+                    <td class="whitespace-nowrap px-6 py-4">Mark</td>
+                    <td class="whitespace-nowrap px-6 py-4">2</td>
+                    <td class="whitespace-nowrap px-6 py-4 status">pending</td>
+                    <td class="whitespace-nowrap px-6 py-4">
+                      <button onclick="setStatus('approve', 1)">Approve</button>
+                      <button onclick="setStatus('decline', 0)">Decline</button>
+                    </td>
+                  </tr>
+                  <tr class="border-b bg-neutral-100 dark:border-neutral-500 white:bg-neutral-700">
+                    <td class="whitespace-nowrap px-6 py-4 font-medium">4</td>
+                    <td class="whitespace-nowrap px-6 py-4">Larry</td>
+                    <td class="whitespace-nowrap px-6 py-4">2.5</td>
+                    <td class="whitespace-nowrap px-6 py-4 status">pending</td>
+                    <td class="whitespace-nowrap px-6 py-4">
+                      <button onclick="setStatus('approve', 1)">Approve</button>
+                      <button onclick="setStatus('decline', 0)">Decline</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flex flex-col">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+              <table class="w-3/4 ml-auto mr-auto mt-10px items-center justify-center text-left text-sm font-serif">
+                <thead class="border-b bg-white font-medium dark:border-neutral-500 white:bg-neutral-600">
+                  <tr>
+                    <th colspan="5" scope="col" class="px-6 py-4 text-center text-4xl bg-yellow-300">Work History</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b bg-neutral-100 dark:border-neutral-500 white:bg-neutral-700 font-semibold ">
+                    <td class="whitespace-nowrap px-6 py-4 font-semibold">S.no.</td>
+                    <td class="whitespace-nowrap px-6 py-4">Name of user</td>
+                    <td class="whitespace-nowrap px-6 py-4">Distance</td>
+                    <td class="whitespace-nowrap px-6 py-4">Status</td>
+                    
+                  </tr>
+                  <tr class="border-b bg-white dark:border-neutral-500 white:bg-neutral-600">
+                    <td class="whitespace-nowrap px-6 py-4 font-medium">1</td>
+                    <td class="whitespace-nowrap px-6 py-4">Shailesh Kumar</td>
+                    <td class="whitespace-nowrap px-6 py-4">0.5</td>
+                    <td class="whitespace-nowrap px-6 py-4 status">Completed</td>
+                    
+                  </tr>
+                  <tr class="border-b bg-neutral-100 dark:border-neutral-500 white:bg-neutral-700">
+                    <td class="whitespace-nowrap px-6 py-4 font-medium">2</td>
+                    <td class="whitespace-nowrap px-6 py-4">Bixo</td>
+                    <td class="whitespace-nowrap px-6 py-4">1.5</td>
+                    <td class="whitespace-nowrap px-6 py-4 status">Completed</td>
+                    
+                  </tr>
+                  <tr class="border-b bg-neutral-100 dark:border-neutral-500 white:bg-neutral-700">
+                    <td class="whitespace-nowrap px-6 py-4 font-medium">3</td>
+                    <td class="whitespace-nowrap px-6 py-4">Mark</td>
+                    <td class="whitespace-nowrap px-6 py-4">2</td>
+                    <td class="whitespace-nowrap px-6 py-4 status">Completed</td>
+                    
+                  </tr>
+                  <tr class="border-b bg-neutral-100 dark:border-neutral-500 white:bg-neutral-700">
+                    <td class="whitespace-nowrap px-6 py-4 font-medium">4</td>
+                    <td class="whitespace-nowrap px-6 py-4">Larry</td>
+                    <td class="whitespace-nowrap px-6 py-4">2.5</td>
+                    <td class="whitespace-nowrap px-6 py-4 status">Declined</td>
+                   
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+     
+
+
+
+        
+    </body>
+
+    <!-- -------------------footer--------------------------------- -->
+
+
+<div class="footer">
+    <footer class="text-white body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">WorkEaze</span>
+          </a>
+          <p class="text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2022 WorkEaze —
+            <a href="https://twitter.com/knyttneve" class="text-white ml-1" rel="noopener noreferrer" target="_blank">@iif</a>
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a class="text-white">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-white">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-white">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-white">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </footer>
+    </div>
+</html>
