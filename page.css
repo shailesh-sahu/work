@@ -1,0 +1,30 @@
+.bgimg
+{
+    background-image: url("/bg.jpg");
+    background-position: 0% 0%;
+    height:100%;
+    width:100%;
+    background-size: cover;
+    /* filter: blur(3px); */
+}
+body{
+    height: 100%;
+    Width:100%;
+}
+.footer
+{
+    position:absolute;
+    bottom: 10px;
+    right:37%;
+}
+
+h1{
+    text-align: center;
+    font-size: 35px;
+}
+.boxxx{
+    padding: 10%;
+    background-color: white;
+    /* margin: 10% 30% 15%; */
+    margin-top: 7%;
+}
